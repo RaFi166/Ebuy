@@ -13,7 +13,6 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->integer('category_id');
             $table->string('product_name');
-            
             $table->integer('product_code');
             $table->integer('product_quantity');
             $table->text('short_description');

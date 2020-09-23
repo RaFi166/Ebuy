@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Category;
 use App\Product;
 use Image;
@@ -20,7 +19,6 @@ class ProductController extends Controller
         $request-> validate([
             'product_name'=> 'required',
             'category_id'=> 'required',
-            
             'product_code'=> 'required',
             'product_quantity'=> 'required',
             'short_description'=> 'required',
@@ -49,7 +47,6 @@ class ProductController extends Controller
        Product::insert([
            'product_name'=> $request->product_name,
            'category_id'=> $request->category_id,
-           //'product_slug'=> strlower(str_replace(' ','-'.$request->product_name)),
            'product_code'=> $request->product_code,
            'product_quantity'=> $request->product_quantity,
            'short_description'=> $request->short_description,
@@ -62,7 +59,36 @@ class ProductController extends Controller
        ]);
        return back()->with('success','Products inserted successfully');
     }
+     
 
+    function all_products(){
+       $all_product= Product::all();
+        return view ('admin.product.all_product', compact('all_product'));
+    }
+
+    function edit_product($product_id){
+        $all_categories= Category::all();
+        $single_product= Product::find($product_id);
+        return view('admin.product.edit_category', compact('single_product','all_categories'));
+
+    }
+
+    function update_product(Request $request){
+
+        $request->validate(['product_name'=> $request->product_name,
+        'category_id'=> $request->category_id,
+        'product_code'=> $request->product_code,
+        'product_quantity'=> $request->product_quantity,
+        'short_description'=> $request->short_description,
+        'long_description'=> $request->long_description,
+        'price'=> $request->price,
+        'updated_at'=> Carbon::now(),
+        ]);
+
+        
+      
+        
+    }
 
     //end
 }

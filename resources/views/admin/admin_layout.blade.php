@@ -339,7 +339,17 @@
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Products</span><span class="label label-important"> 2 </span></a>
 							<ul>
 							<li><a class="submenu" href="{{route('add_product')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Products</span></a></li>
-								<li><a class="submenu" href="submenu2.html"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Products</span></a></li>
+							<li><a class="submenu" href="{{route('all_products')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Products</span></a></li>
+								
+							</ul>	
+						</li>
+
+
+						<li>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Coupon</span><span class="label label-important"> 2 </span></a>
+							<ul>
+							<li><a class="submenu" href="{{route('add_coupon')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Coupon</span></a></li>
+							<li><a class="submenu" href="{{route('all_coupon')}}"><i class="icon-file-alt"></i><span class="hidden-tablet"> All Coupon</span></a></li>
 								
 							</ul>	
 						</li>

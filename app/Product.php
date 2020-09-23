@@ -14,4 +14,8 @@ class Product extends Model
         'long_description', 'price', 
         'image_two', 'image_three', 'status',
     ];
+
+    public function relationBetweenCategory(){
+        return $this-> hasOne(Category::class,'id','category_id');
+    }
 }
