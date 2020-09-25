@@ -24,7 +24,13 @@
                             <ul class="featured__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                
+                            <form action="{{url('/add_to_cart/'. $products->id)}}" method="POST">
+                                @csrf
+                            
+                                <li> <button type="submit"><i class="fa fa-shopping-cart"></i></button></li>
+                                <input type="hidden" name="price" value="{{$products->price}}" id="">
+                            </form>
                             </ul>
                         </div>
                         <div class="featured__item__text">

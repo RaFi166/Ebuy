@@ -44,3 +44,8 @@ Route::get('admin/all_coupon','CouponController@all_coupon')-> name('all_coupon'
 Route::get('admin/edit_coupon/{coupon_id}','CouponController@edit_coupon')-> name('edit_coupon');
 Route::post('admin/edit_coupon/save','CouponController@update_coupon')-> name('update_coupon');
 Route::get('admin/delete_coupon/{coupon_id}','CouponController@delete_coupon')-> name('delete_coupon');
+
+
+//cart........................
+Route::post('/add_to_cart/{product_id}','CartController@add_to_cart')-> name('add_to_cart');
+Route::get('/cart_page','CartController@cart_page')-> name('cart_page');
