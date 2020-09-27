@@ -49,3 +49,6 @@ Route::get('admin/delete_coupon/{coupon_id}','CouponController@delete_coupon')->
 //cart........................
 Route::post('/add_to_cart/{product_id}','CartController@add_to_cart')-> name('add_to_cart');
 Route::get('/cart_page','CartController@cart_page')-> name('cart_page');
+Route::get('/cart_remove/{cart_remove_id}','CartController@cart_remove')-> name('cart_remove');
+Route::post('/cart_update/{cart_update_id}','CartController@cart_update')-> name('cart_update');
+

@@ -35,5 +35,20 @@ class CartController extends Controller
         
     }
 
+    function cart_remove($cart_remove_id){
+        Cart::where('id',$cart_remove_id)->where('user_ip',request()->ip())->delete();
+        return back()->with('cart_remove','cart has been removed');
+
+    }
+
+    function cart_update(Request $request, $cart_update_id){
+        Cart::where('id',$cart_update_id)->where('user_ip',request()->ip())->update([
+            'qty' => $request->qty,
+        ]);
+
+        return back()->with('cart_update','cart has been updated');
+
+    }
+
 //end
 }
