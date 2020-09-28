@@ -52,3 +52,5 @@ Route::get('/cart_page','CartController@cart_page')-> name('cart_page');
 Route::get('/cart_remove/{cart_remove_id}','CartController@cart_remove')-> name('cart_remove');
 Route::post('/cart_update/{cart_update_id}','CartController@cart_update')-> name('cart_update');
 
+//single_product view...................
+Route::get('/product_details/{product_id}','FrontendController@product_details')->name('product_details');

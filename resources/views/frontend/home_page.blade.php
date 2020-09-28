@@ -34,7 +34,7 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">{{$products->product_name}}</a></h6>
+                        <h6><a href="{{URL::to('/product_details/'.$products->id)}}">{{$products->product_name}}</a></h6>
                         <h5>Taka {{$products->price}}</h5>
                         <h5>Quantity {{$products->product_quantity}}</h5>
                         </div>
