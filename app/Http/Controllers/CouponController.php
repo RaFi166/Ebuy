@@ -8,6 +8,12 @@ use Carbon\Carbon;
 
 class CouponController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('Role');
+    }
+    
    function add_coupon(){
        return view('admin.coupon.add_coupon');
    }

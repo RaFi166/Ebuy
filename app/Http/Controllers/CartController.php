@@ -7,6 +7,8 @@ use App\Cart;
 
 class CartController extends Controller
 {
+
+   
     function add_to_cart(Request $request, $product_id){
 
         $check= Cart::where('product_id', $product_id)->where('user_ip',request()->ip())->first();

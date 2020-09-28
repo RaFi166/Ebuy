@@ -8,6 +8,13 @@ use Carbon\Carbon;
 
 class CategoryController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('Role');
+    }
+    
     public function add_category(){
         return view ('admin.category.add_category_form');
     }

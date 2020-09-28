@@ -10,6 +10,13 @@ use Carbon\Carbon;
 
 class ProductController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('Role');
+    }
+    
     function add_product(){
        $all_categories= Category::all();
         return view('admin.product.add_product_form', compact('all_categories'));
