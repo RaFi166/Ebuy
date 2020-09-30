@@ -13,16 +13,25 @@
                     </div>                
                 </div>
             </div>
-
+            @if (session('wishlist'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+               <strong> {{ session('wishlist') }}</strong>
+             <button type="button" class="close" data-dismiss="alert" area-label="close">
+             <span aria-hidden="true"> &times; </span>
+             </button>
+            </div>
+          @endif
             <div class="row featured__filter">
 
                 @foreach ($all_products as $products)
+
+               
 
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{asset($products-> image_one)}}">
                             <ul class="featured__item__pic__hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="{{URL::to('wishlist/'.$products->id)}}"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                 
                             <form action="{{url('/add_to_cart/'. $products->id)}}" method="POST">

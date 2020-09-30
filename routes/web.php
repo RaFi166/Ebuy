@@ -54,3 +54,10 @@ Route::post('/cart_update/{cart_update_id}','CartController@cart_update')-> name
 
 //single_product view...................
 Route::get('/product_details/{product_id}','FrontendController@product_details')->name('product_details');
+
+//contact....................
+Route::get('/contact','contactController@index')->name('contact');
+Route::post('/message/store','contactController@message_store')->name('message_store');
+
+//wishlist................
+Route::get('/wishlist/{product_id}','WishlistController@index')->name('wishlist');
