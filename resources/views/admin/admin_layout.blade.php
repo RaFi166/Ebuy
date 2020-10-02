@@ -355,7 +355,7 @@
 						</li>
 
 
-						<li><a href="tasks.html"><i class="icon-tasks"></i><span class="hidden-tablet"> Tasks</span></a></li>
+						<li><a href="{{route('all_message')}}"><i class="icon-tasks"></i><span class="hidden-tablet"> Messages</span></a></li>
 						<li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
 						<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li>
 						<li>

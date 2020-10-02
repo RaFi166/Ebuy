@@ -16,6 +16,8 @@ Route::get('/','FrontendController@index')->name('home_page');
 
 //admin...............
 Route::get('admin/dashboard','AdminController@dashboard')->name('dashboard');
+Route::get('/all_message','AdminController@all_message')->name('all_message');
+Route::get('/delete_message/{message_id}','AdminController@delete_message')->name('delete_message');
 
 
 //category...............
@@ -57,7 +59,9 @@ Route::get('/product_details/{product_id}','FrontendController@product_details')
 
 //contact....................
 Route::get('/contact','contactController@index')->name('contact');
+
 Route::post('/message/store','contactController@message_store')->name('message_store');
 
 //wishlist................
 Route::get('/wishlist/{product_id}','WishlistController@index')->name('wishlist');
+Route::get('/wishlist/page','WishlistController@wish_page')->name('wish_page');

@@ -21,6 +21,9 @@
              </button>
             </div>
           @endif
+
+     
+
             <div class="row featured__filter">
 
                 @foreach ($all_products as $products)
@@ -31,7 +34,7 @@
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{asset($products-> image_one)}}">
                             <ul class="featured__item__pic__hover">
-                            <li><a href="{{URL::to('wishlist/'.$products->id)}}"><i class="fa fa-heart"></i></a></li>
+                            <li><a href="{{URL::to('/wishlist/'.$products->id)}}"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>
                                 
                             <form action="{{url('/add_to_cart/'. $products->id)}}" method="POST">

@@ -22,5 +22,9 @@ class WishlistController extends Controller
             return back()->with('wishlist','Wishlist added successfully');
 
         }
+       public function wish_page(){
+            $all_wishlists= Wishlist::where('user_id',Auth::id())->latest()->get();
+            return view('frontend.wishlist.wishlist_page');
+        }
     //end
 }

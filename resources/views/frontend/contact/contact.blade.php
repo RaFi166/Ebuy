@@ -1,6 +1,15 @@
 @extends('frontend.home_layout')
 @section('home_content')
   
+
+@if (session('message_sent'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+   <strong> {{ session('message_sent') }}</strong>
+ <button type="button" class="close" data-dismiss="alert" area-label="close">
+ <span aria-hidden="true"> &times; </span>
+ </button>
+</div>
+@endif
 <section class="contact spad">
     <div class="container">
         <div class="row">
@@ -65,16 +74,18 @@
                 </div>
             </div>
         </div>
-    <form action="{{url('/message/store')}}" method="POST">
+
+    <form action="{{route('message_store')}}" method="POST">
+        @csrf
             <div class="row">
                 <div class="col-lg-6 col-md-6">
-                    <input type="text" placeholder="Your name">
+                    <input type="text" name="name" placeholder="Your name">
                 </div>
                 <div class="col-lg-6 col-md-6">
-                    <input type="text" placeholder="Your Email">
+                    <input type="text" name="email" placeholder="Your Email">
                 </div>
                 <div class="col-lg-12 text-center">
-                    <textarea placeholder="Your message"></textarea>
+                    <textarea name="message" placeholder="Your message"></textarea>
                     <button type="submit" class="site-btn">SEND MESSAGE</button>
                 </div>
             </div>

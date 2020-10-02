@@ -152,7 +152,7 @@
                             </li>
                             <li><a href="./blog.html">Blog</a></li>
                             <li><a href="./shop-grid.html">About Us</a></li>
-                            <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="{{route('contact')}}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -163,10 +163,11 @@
                           return $t->price * $t->qty;
                       });
                       $quantity=  App\Cart::all()->where('user_ip',request()->ip())->sum('qty');
+                      $wishqty= App\Wishlist::where('user_id',Auth::id())->get();
                     @endphp
                     <div class="header__cart">
                         <ul>
-                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                        <li><a href="{{route('wish_page')}}"><i class="fa fa-heart"></i> <span>{{count($wishqty)}}</span></a></li>
                         <li><a href="{{route('cart_page')}}"><i class="fa fa-shopping-bag"></i> <span>{{$quantity}}</span></a></li>
                         </ul>
                         <div class="header__cart__price">Total: <span>{{$total}} Tk</span></div>

@@ -17,9 +17,11 @@ class contactController extends Controller
             'email'=> $request->email,
             'message'=> $request->message,
         ]);
-        return back();
+        return back()->with('message_sent','message has sent');
 
     }
+
+    
 
     //end
 }
