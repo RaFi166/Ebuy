@@ -198,7 +198,7 @@
                        
                         <ul>
                             @foreach ($all_categories as $category)                                                       
-                            <li><a href="#">{{$category->category_name}}</a></li>    
+                        <li><a href="{{URL::to('/products_by_category/'.$category->id)}}">{{$category->category_name}}</a></li>    
                             @endforeach                      
                         </ul>
 

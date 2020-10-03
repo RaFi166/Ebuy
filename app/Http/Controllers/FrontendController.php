@@ -11,8 +11,15 @@ class FrontendController extends Controller
        $all_products= Product::all();
         return view ('frontend.home_page', compact('all_products'));
     }
+    
     public function product_details($product_id){
         $single_product= Product::findOrFail($product_id);
         return view('frontend.product_details', compact('single_product'));
+    }
+
+    public function products_by_category($category_id){
+        //echo $category_id;
+        $all_products = Product::where('category_id',$category_id)->get();
+        return view ('frontend.products_by_category.products_by_category',compact('all_products'));
     }
 }

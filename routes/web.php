@@ -13,6 +13,7 @@ Auth::routes();
 
 //frontend...............
 Route::get('/','FrontendController@index')->name('home_page');
+Route::get('/products_by_category/{category_id}','FrontendController@products_by_category')->name('products_by_category');
 
 //admin...............
 Route::get('admin/dashboard','AdminController@dashboard')->name('dashboard');
