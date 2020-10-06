@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Product;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class FrontendController extends Controller
 {
@@ -22,4 +23,11 @@ class FrontendController extends Controller
         $all_products = Product::where('category_id',$category_id)->get();
         return view ('frontend.products_by_category.products_by_category',compact('all_products'));
     }
+
+    // public function profile($user_id){
+    //     $user=User::find($user_id);
+    //     return view ('frontend.profile.profile',compact('user'));
+    // }
+
+    //end
 }

@@ -123,7 +123,7 @@
                                 <a href="{{ route('home') }}"><i class="fa fa-user"></i> My Account</a>
                                 @else 
                                
-                                <a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a>
+                                <a href="{{ route('login') }}"><i class="fa fa-user"></i>Login/Register</a>
                                 @endauth
                             </div>
                         </div>

@@ -2,11 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
@@ -66,3 +61,10 @@ Route::post('/message/store','contactController@message_store')->name('message_s
 //wishlist................
 Route::get('/wishlist/{product_id}','WishlistController@index')->name('wishlist');
 Route::get('/wishlist/page','WishlistController@wish_page')->name('wish_page');
+
+
+//profile
+//Route::get('/user_profile','FrontendController@profile')->name('profile');
+
+//checkout
+Route::get('/checkout/total','CheckoutController@index')->name('checkout_total');
